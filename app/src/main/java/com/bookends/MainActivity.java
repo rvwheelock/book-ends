@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private Button scanBtn;
-    private TextView formatTxt, contentTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +27,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
-        
+
         scanBtn = (Button)findViewById(R.id.scan);
-        formatTxt = (TextView)findViewById(R.id.scan_format);
-        contentTxt = (TextView)findViewById(R.id.scan_content);
         scanBtn.setOnClickListener(this);
     }
 
@@ -73,8 +70,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             //we have a result
             String scanContent = scanningResult.getContents();
             String scanFormat = scanningResult.getFormatName();
-            formatTxt.setText("FORMAT: " + scanFormat);
-            contentTxt.setText("CONTENT: " + scanContent);
+
+            Intent i = new Intent(getApplicationContext(), BookProfileActivity.class);
+            i.putExtra("key",scanContent);
+            startActivity(i);
+
         }
         else{
             Toast toast = Toast.makeText(getApplicationContext(),

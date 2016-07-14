@@ -6,4 +6,6 @@
     <string name="scan">scan an ISBN?</string>
     <string name="search">search for a title?</string>
     <string name="explore">explore?</string>
+    <string name="title_activity_book_profile">BookProfileActivity</string>
+    <string name="book_profile">Book Profile</string>
 </resources>
