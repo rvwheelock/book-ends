@@ -7,5 +7,14 @@
     <string name="search">search for a title?</string>
     <string name="explore">explore?</string>
     <string name="title_activity_book_profile">BookProfileActivity</string>
-    <string name="book_profile">Book Profile</string>
+    <string name="book_title">Book Title</string>
+    <string name="author">author</string>
+    <string name="review">review this title</string>
+    <string name="dynamic_liked">__%</string>
+    <string name="static_liked">liked it</string>
+    <string name="dynamic_recommend"> __%</string>
+    <string name="static_recommend">recommend it</string>
+    <string name="sadscale">%\non the sad scale</string>
+    <string name="genres">Genres</string>
+    <string name="triggers">Trigger Warnings</string>
 </resources>
