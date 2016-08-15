@@ -17,4 +17,5 @@
     <string name="sadscale">%\non the sad scale</string>
     <string name="genres">Genres</string>
     <string name="triggers">Trigger Warnings</string>
+    <string name="another">Other Things</string>
 </resources>
