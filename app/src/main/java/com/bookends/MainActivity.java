@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private Button scanBtn;
+    private Button searchBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         scanBtn = (Button)findViewById(R.id.scan);
         scanBtn.setOnClickListener(this);
+
+        searchBtn = (Button)findViewById(R.id.search);
+        searchBtn.setOnClickListener(this);
     }
 
     @Override
@@ -56,11 +60,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     public void onClick(View v){
         //respond to clicks
-        if(v.getId()==R.id.scan){
-            //scan
-            IntentIntegrator scanIntegrator = new IntentIntegrator(this);
-            scanIntegrator.initiateScan();
+        switch (v.getId()) {
+
+            case R.id.scan:
+                IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+                scanIntegrator.initiateScan();
+                break;
+
+            case R.id.search:
+                Intent i = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(i);
+                break;
+
+            default:
+                break;
         }
+
+//
+//        if(v.getId()==R.id.scan){
+//            //scan
+//            IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+//            scanIntegrator.initiateScan();
+//        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
