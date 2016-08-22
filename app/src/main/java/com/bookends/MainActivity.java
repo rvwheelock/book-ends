@@ -20,6 +20,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements View.OnClickListener {
     private Button scanBtn;
     private Button searchBtn;
+    private Button exploreBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         searchBtn = (Button)findViewById(R.id.search);
         searchBtn.setOnClickListener(this);
+
+        exploreBtn = (Button)findViewById(R.id.explore);
+        exploreBtn.setOnClickListener(this);
     }
 
     @Override
@@ -70,6 +74,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.search:
                 Intent i = new Intent(getApplicationContext(), SearchActivity.class);
                 startActivity(i);
+                break;
+
+            case R.id.explore:
+                Intent in = new Intent(getApplicationContext(), ExploreActivity.class);
+                startActivity(in);
                 break;
 
             default:
