@@ -1,5 +1,6 @@
 package com.bookends;
 
+import com.google.zxing.common.StringUtils;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -99,12 +100,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if (scanningResult != null) {
             //we have a result
             String scanContent = scanningResult.getContents();
-            String scanFormat = scanningResult.getFormatName();
+            if (scanContent != null && !scanContent.isEmpty()) {
+                String scanFormat = scanningResult.getFormatName();
 
-            Intent i = new Intent(getApplicationContext(), BookProfileActivity.class);
-            i.putExtra("key",scanContent);
-            startActivity(i);
-
+                Intent i = new Intent(getApplicationContext(), BookProfileActivity.class);
+                i.putExtra("key",scanContent);
+                startActivity(i);
+            }
+            else {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "No scan data received!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
         }
         else{
             Toast toast = Toast.makeText(getApplicationContext(),
