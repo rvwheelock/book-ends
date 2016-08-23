@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">BookEnds</string>
-    <string name="welcome">Welcome to BookEnds! \n\nWould you like to ...</string>
+    <string name="would">would you like to ...</string>
     <string name="hello_world">Why hello there</string>
     <string name="action_settings">Settings</string>
-    <string name="scan">scan an ISBN?</string>
-    <string name="search">search for a title?</string>
-    <string name="explore">explore?</string>
+    <string name="scan">scan an ISBN</string>
+    <string name="search">search for a title</string>
+    <string name="explore">explore</string>
     <string name="title_activity_book_profile">BookProfileActivity</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_explore">ExploreActivity</string>

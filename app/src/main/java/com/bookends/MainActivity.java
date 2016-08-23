@@ -7,6 +7,9 @@ import com.google.zxing.integration.android.IntentResult;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -31,14 +34,39 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         setContentView(R.layout.activity_main);
 
+        TextView tx = (TextView)findViewById(R.id.title);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/Alice-Regular.ttf");
+        tx.setTypeface(custom_font);
+
+        TextView tx1 = (TextView)findViewById(R.id.scan);
+        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/Alice-Regular.ttf");
+        tx1.setTypeface(custom_font1);
+
+        TextView tx2 = (TextView)findViewById(R.id.search);
+        Typeface custom_font2 = Typeface.createFromAsset(getAssets(), "fonts/Alice-Regular.ttf");
+        tx2.setTypeface(custom_font2);
+
+        TextView tx3 = (TextView)findViewById(R.id.explore);
+        Typeface custom_font3 = Typeface.createFromAsset(getAssets(), "fonts/Alice-Regular.ttf");
+        tx3.setTypeface(custom_font3);
+
+//        TextView tx1 = (TextView)findViewById(R.id.would);
+//        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/Alice-Regular.ttf");
+//        tx1.setTypeface(custom_font1);
+
         scanBtn = (Button)findViewById(R.id.scan);
         scanBtn.setOnClickListener(this);
+        scanBtn.setBackgroundColor(Color.parseColor("#F29C89"));
 
         searchBtn = (Button)findViewById(R.id.search);
         searchBtn.setOnClickListener(this);
+        searchBtn.setBackgroundColor(Color.parseColor("#F29C89"));
 
         exploreBtn = (Button)findViewById(R.id.explore);
         exploreBtn.setOnClickListener(this);
+        exploreBtn.setBackgroundColor(Color.parseColor("#F29C89"));
+
+
     }
 
     @Override
@@ -101,8 +129,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             //we have a result
             String scanContent = scanningResult.getContents();
             if (scanContent != null && !scanContent.isEmpty()) {
-                String scanFormat = scanningResult.getFormatName();
-
                 Intent i = new Intent(getApplicationContext(), BookProfileActivity.class);
                 i.putExtra("key",scanContent);
                 startActivity(i);
