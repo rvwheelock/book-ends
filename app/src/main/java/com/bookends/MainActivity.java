@@ -39,15 +39,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
         tx.setTypeface(custom_font);
 
         TextView tx1 = (TextView)findViewById(R.id.scan);
-        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/Alice-Regular.ttf");
+        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/new_athena_unicode.ttf");
         tx1.setTypeface(custom_font1);
 
         TextView tx2 = (TextView)findViewById(R.id.search);
-        Typeface custom_font2 = Typeface.createFromAsset(getAssets(), "fonts/Alice-Regular.ttf");
+        Typeface custom_font2 = Typeface.createFromAsset(getAssets(), "fonts/new_athena_unicode.ttf");
         tx2.setTypeface(custom_font2);
 
         TextView tx3 = (TextView)findViewById(R.id.explore);
-        Typeface custom_font3 = Typeface.createFromAsset(getAssets(), "fonts/Alice-Regular.ttf");
+        Typeface custom_font3 = Typeface.createFromAsset(getAssets(), "fonts/new_athena_unicode.ttf");
         tx3.setTypeface(custom_font3);
 
 //        TextView tx1 = (TextView)findViewById(R.id.would);
